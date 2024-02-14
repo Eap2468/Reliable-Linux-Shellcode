@@ -14,13 +14,13 @@ _start:
 	mov al, 59
 
 	; env
-	xor rsi, rsi
-
-	; argv
 	xor rdx, rdx
 
+	; argv
+	xor rsi, rsi
+
 	;filename
-	push rdx 
+	push rsi 
 	mov rdi, 0x68732f2f6e69622f
 	push rdi
 	lea rdi, [rsp]
