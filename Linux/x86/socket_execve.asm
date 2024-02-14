@@ -1,7 +1,7 @@
 ; Port numbers and IP addresses are made to be as simple to change as possible
 ; without adding too many extra instructions
 
-; Compile to test with
+; Compile to test or get opcodes with
 ; nasm -f elf32 socket_execve.asm
 ; ld -m elf_i386 socket_execve.o -o socket_execve
 
