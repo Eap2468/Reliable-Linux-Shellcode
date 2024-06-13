@@ -7,7 +7,7 @@ section .text
 
 _start:
         ; Make room on the stack for the /bin//sh string
-        sub sp, 0x0202
+        sub sp, 0x30
 
         ; execve syscall number (11)
         xor eax, eax
