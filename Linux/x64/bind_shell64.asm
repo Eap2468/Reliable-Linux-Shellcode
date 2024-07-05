@@ -80,7 +80,7 @@ _start:
 	xor rax, rax
 	mov al, 3
 	; fd
-	mov rdi, [rbp + 0x04]
+	mov edi, dword [rbp + 0x04]
 	syscall
 	pop rax
 	mov [rbp + 0x04], rax
